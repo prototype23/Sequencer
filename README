@@ -1,3 +1,5 @@
+#FORK for personal use. This is not the original plugin!
+
 Sequencer
 A fast(?) fullscreen image-sequence player
 
@@ -22,6 +24,19 @@ How to use:
         to   : 'pics/dog/100.png',
     });
 
+How to start idle and then start/restart programmatically:
+    ```js
+      const s1 = Sequencer.make({
+        ...
+        playMode: 'none',
+        loop: 'none',
+      });
+
+      // Later on some button click or whatever.
+      s1.reset();
+      s1.run();
+    ```
+
     All options:
 
     const opts = {
@@ -43,7 +58,7 @@ How to use:
                                         // needs to be triggered manually with load().
         fitFirstImage    : false,       // resizes the canvas to the size of
                                         // the first loaded image in the sequence
-        showLoadedImages : false,       // show images while loading the sequence, 
+        showLoadedImages : false,       // show images while loading the sequence,
                                         // may be jumpy because of async laoding <- not a typo
         dragAmount       : 10,          // distance (in pixels) to trigger nextImage(),
                                         // can be < 1, but must be > 0
@@ -54,6 +69,10 @@ How to use:
 
 --------------------------------------------------------------------------------
 Changelog:
+    - 2.2
+    - Sequencer has now the ability to begin with no animation and then programmatically started/restarted.
+    - Fixed a bug where the option `loop: 'none'` was not respected.
+
       2.1
     - update to ECMAScript 2015 (aka ES6)
     - script is now an ES6 module (may need transpiling for legacy support)
@@ -71,7 +90,7 @@ Changelog:
 Todo:
     - remove 'loop' option (merge with playMode)
     - transpiled version for ES5 support
-    - area hovering 
+    - area hovering
     - accept an image array as parameter
     - accept a spritesheet as parameter
     - WebGL support

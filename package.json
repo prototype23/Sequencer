@@ -1,6 +1,6 @@
 {
   "name": "image-sequencer",
-  "version": "2.1.1",
+  "version": "2.2.1",
   "description": "Sequencer - A fast(?) fullscreen image-sequence player",
   "main": "sequencer/sequencer.js",
   "directories": {
